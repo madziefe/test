@@ -1,0 +1,19 @@
+
+---
+apiVersion: v1alpha1
+kind: Pipeline
+metadata:
+  name: test
+  namespace: acalephtest
+spec:
+  selector:
+    matchLabels:
+      app: acalephtest
+  template:
+    metadata:
+      name: acalephtest
+      labels:
+        app: test
+    stages:
+      - name: Build Image
+        type: docker_build
